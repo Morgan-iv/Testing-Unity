@@ -3,7 +3,7 @@ VRShop/Library/metadata/
 VRShop/Library/PlayerDataCache/
 VRShop/Library/ScriptAssemblies/
 VRShop/Library/ShaderCache/
-VRShop/Library/gfu/
+VRShop/Library/gfu/cache/
 VRShop/Temp/
 
 VRShop/Library/EditorInstance.json
@@ -13,4 +13,3 @@ UnityLockFile
 
 *.log
 *.meta
-
