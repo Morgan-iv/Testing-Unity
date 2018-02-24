@@ -92,6 +92,7 @@ public class GvrControllerReticleVisual : MonoBehaviour {
   }
 
   protected virtual void OnEnable() {
+    Debug.Log("meme");
     RefreshMesh();
   }
 

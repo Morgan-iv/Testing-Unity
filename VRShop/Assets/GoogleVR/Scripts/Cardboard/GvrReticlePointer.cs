@@ -180,8 +180,8 @@ public class GvrReticlePointer : GvrBasePointer {
       // prism, and one at the end of the prism.
       float angle = (float)si / (float)(segments_count) * kTwoPi;
 
-      float x = Mathf.Sin(angle);
-      float y = Mathf.Cos(angle);
+      float x = Mathf.Sin(angle + Mathf.PI);
+      float y = Mathf.Cos(angle + Mathf.PI);
 
       vertices[vi++] = new Vector3(x, y, 0.0f); // Outer vertex.
       vertices[vi++] = new Vector3(x, y, 1.0f); // Inner vertex.
