@@ -4,6 +4,9 @@ VRShop/Library/PlayerDataCache/
 VRShop/Library/ScriptAssemblies/
 VRShop/Library/ShaderCache/
 VRShop/Temp/
+
+VRShop/Library/EditorInstance.json
 UnityLockFile
+
 *.log
 *.meta
