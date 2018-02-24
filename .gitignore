@@ -1,0 +1,9 @@
+VRShop/.vs/
+VRShop/Library/metadata/
+VRShop/Library/PlayerDataCache/
+VRShop/Library/ScriptAssemblies/
+VRShop/Library/ShaderCache/
+VRShop/Temp/
+UnityLockFile
+*.log
+*.meta
