@@ -11,10 +11,70 @@ MonoBehaviour:
   m_Script: {fileID: -530159753, guid: 7d3a677691631814c819f6c04b639945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastUpdatedAtString: 2018-02-24T23:57:36.0910199+03:00
-  lastVerifiedAtString: 2018-02-24T23:57:36.0910199+03:00
+  lastUpdatedAtString: 2018-02-25T00:09:40.6543507+03:00
+  lastVerifiedAtString: 2018-02-25T00:09:40.6543507+03:00
   initializedAtString: 2018-02-24T23:36:01.9513102+03:00
   log:
+  - commitID: c96b13784600868ecc506401b09b97d21db6caa9
+    mergeA: 
+    mergeB: 
+    authorName: Viliars
+    authorEmail: redkillerpw@mail.ru
+    commitEmail: redkillerpw@mail.ru
+    commitName: Viliars
+    summary: gitignore again
+    description: gitignore again
+    timeString: 2018-02-25T00:08:39.0000000+03:00
+    commitTimeString: 2018-02-25T00:08:39.0000000+03:00
+    changes:
+    - path: .gitignore
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\.gitignore
+      projectPath: ..\.gitignore
+      originalPath: 
+      status: 3
+      staged: 0
+  - commitID: 7641af971ced755dce09bbcc831c27d5b9b66972
+    mergeA: 
+    mergeB: 
+    authorName: Viliars
+    authorEmail: redkillerpw@mail.ru
+    commitEmail: redkillerpw@mail.ru
+    commitName: Viliars
+    summary: wtf
+    description: wtf
+    timeString: 2018-02-24T23:59:44.0000000+03:00
+    commitTimeString: 2018-02-24T23:59:44.0000000+03:00
+    changes:
+    - path: VRShop\Library\gfu\cache\branches.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\branches.yaml
+      projectPath: Library\gfu\cache\branches.yaml
+      originalPath: 
+      status: 3
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gitlocks.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gitlocks.yaml
+      projectPath: Library\gfu\cache\gitlocks.yaml
+      originalPath: 
+      status: 3
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gitlog.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gitlog.yaml
+      projectPath: Library\gfu\cache\gitlog.yaml
+      originalPath: 
+      status: 3
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gitstatusentries.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gitstatusentries.yaml
+      projectPath: Library\gfu\cache\gitstatusentries.yaml
+      originalPath: 
+      status: 3
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gittrackingstatus.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gittrackingstatus.yaml
+      projectPath: Library\gfu\cache\gittrackingstatus.yaml
+      originalPath: 
+      status: 3
+      staged: 0
   - commitID: 158e1f672f12ba310ddba7e191f40c2cdd92bd8b
     mergeA: 
     mergeB: 
