@@ -40,7 +40,7 @@ public class GvrLaserVisual : MonoBehaviour, IGvrArmModelReceiver {
   [Tooltip("End color of the laser pointer including alpha transparency.")]
   public Color laserColorEnd = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
-  Максимальное расстояние лазера (метров).
+  ///Максимальное расстояние лазера (метров).
   [Tooltip("Maximum distance of the laser (meters).")]
   [Range(0.0f, 20.0f)]
   public float maxLaserDistance = 1.0f;

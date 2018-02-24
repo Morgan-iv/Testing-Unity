@@ -6,7 +6,10 @@ VRShop/Library/ShaderCache/
 VRShop/Temp/
 
 VRShop/Library/EditorInstance.json
+VRShop/Library/CurrentMaximizeLayout.dwlt
+VRShop/Library/CurrentLayout.dwlt
 UnityLockFile
 
 *.log
 *.meta
+
