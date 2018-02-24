@@ -11,10 +11,245 @@ MonoBehaviour:
   m_Script: {fileID: -530159753, guid: 7d3a677691631814c819f6c04b639945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastUpdatedAtString: 2018-02-24T23:50:39.2588234+03:00
-  lastVerifiedAtString: 2018-02-24T23:50:39.2588234+03:00
+  lastUpdatedAtString: 2018-02-24T23:57:36.0910199+03:00
+  lastVerifiedAtString: 2018-02-24T23:57:36.0910199+03:00
   initializedAtString: 2018-02-24T23:36:01.9513102+03:00
   log:
+  - commitID: 158e1f672f12ba310ddba7e191f40c2cdd92bd8b
+    mergeA: 
+    mergeB: 
+    authorName: Viliars
+    authorEmail: redkillerpw@mail.ru
+    commitEmail: redkillerpw@mail.ru
+    commitName: Viliars
+    summary: we added github to your github
+    description: "we added github to your github\r\n\r\nso you can coomit while you
+      commit"
+    timeString: 2018-02-24T23:57:33.0000000+03:00
+    commitTimeString: 2018-02-24T23:57:33.0000000+03:00
+    changes:
+    - path: VRShop\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\CREDITS.txt
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\CREDITS.txt
+      projectPath: Assets\Plugins\GitHub\Editor\CREDITS.txt
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\DotNetHttp35.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\DotNetHttp35.dll
+      projectPath: Assets\Plugins\GitHub\Editor\DotNetHttp35.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\EULA.txt
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\EULA.txt
+      projectPath: Assets\Plugins\GitHub\Editor\EULA.txt
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll
+      projectPath: Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\Mono.Security.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\Mono.Security.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Security.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\Octokit.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\Octokit.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Octokit.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\PlatformResources\mac\git-lfs.zip
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\PlatformResources\mac\git-lfs.zip
+      projectPath: Assets\Plugins\GitHub\Editor\PlatformResources\mac\git-lfs.zip
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\PlatformResources\windows\git-lfs.zip
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\PlatformResources\windows\git-lfs.zip
+      projectPath: Assets\Plugins\GitHub\Editor\PlatformResources\windows\git-lfs.zip
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\PlatformResources\windows\git.zip
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\PlatformResources\windows\git.zip
+      projectPath: Assets\Plugins\GitHub\Editor\PlatformResources\windows\git.zip
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\Rackspace.Threading.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\Rackspace.Threading.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Rackspace.Threading.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\libsfw.so
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\libsfw.so
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Library\assetDatabase3
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\assetDatabase3
+      projectPath: Library\assetDatabase3
+      originalPath: 
+      status: 3
+      staged: 0
+    - path: VRShop\Library\gfu\cache\branches.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\branches.yaml
+      projectPath: Library\gfu\cache\branches.yaml
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gitlocks.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gitlocks.yaml
+      projectPath: Library\gfu\cache\gitlocks.yaml
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gitlog.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gitlog.yaml
+      projectPath: Library\gfu\cache\gitlog.yaml
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gitstatusentries.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gitstatusentries.yaml
+      projectPath: Library\gfu\cache\gitstatusentries.yaml
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gittrackingstatus.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gittrackingstatus.yaml
+      projectPath: Library\gfu\cache\gittrackingstatus.yaml
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Library\gfu\cache\gituser.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\gituser.yaml
+      projectPath: Library\gfu\cache\gituser.yaml
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\Library\gfu\cache\repoinfo.yaml
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\Library\gfu\cache\repoinfo.yaml
+      projectPath: Library\gfu\cache\repoinfo.yaml
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: VRShop\VRShop.Editor.csproj
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\VRShop.Editor.csproj
+      projectPath: VRShop.Editor.csproj
+      originalPath: 
+      status: 3
+      staged: 0
+    - path: VRShop\VRShop.csproj
+      fullPath: C:\Users\redki\Documents\GitHub\Testing-Unity\VRShop\VRShop.csproj
+      projectPath: VRShop.csproj
+      originalPath: 
+      status: 3
+      staged: 0
   - commitID: dcc0a11ce1905fad9f958100e6e371f4906b18aa
     mergeA: 20776667951298c289e508d425dd08d4e9e4d90d
     mergeB: f92310e89fe0171406ec4c40d07c8bcb4291715d
