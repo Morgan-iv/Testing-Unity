@@ -1,27 +1,27 @@
-// Copyright 2017 Google Inc. All rights reserved.
+// Copyright 2017 Google Inc. Все права защищены.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
+// Лицензируется по лицензии Apache, версия 2.0 («Лицензия»);
+// вы не можете использовать этот файл, кроме как в соответствии с Лицензией.
+// Вы можете получить копию Лицензии на
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Если это не предусмотрено действующим законодательством или не согласовано в письменной форме, программное обеспечение
+// распространяется по лицензии, распространяется на основе «AS IS»,
+// БЕЗ ГАРАНТИЙ ИЛИ УСЛОВИЙ ЛЮБОГО ВИДА, явных или подразумеваемых.
+// См. Лицензию на конкретном языке, определяющем разрешения и
+// ограничения по лицензии.
 
-// The controller is not available for versions of Unity without the
-// GVR native integration.
+// Контроллер недоступен для версий Unity без
+// Собственная интеграция с GVR.
 
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-/// Implementation of GvrBasePointer for a laser pointer visual.
-/// This script should be attached to the controller object.
-/// The laser visual is important to help users locate their cursor
-/// when its not directly in their field of view.
+/// Реализация GvrBasePointer для визуализации лазерного указателя.
+/// Этот скрипт должен быть прикреплен к объекту контроллера.
+/// Лазерная визуала важна, чтобы помочь пользователям найти свой курсор
+///, когда он не находится непосредственно в их поле зрения.
 [RequireComponent(typeof(GvrLaserVisual))]
 public class GvrLaserPointer : GvrBasePointer {
   [Tooltip("Distance from the pointer that raycast hits will be detected.")]
@@ -34,8 +34,8 @@ public class GvrLaserPointer : GvrBasePointer {
     "Set this field to a non-zero value to override it.")]
   public float overrideCameraRayIntersectionDistance;
 
-  /// The percentage of the reticle mesh that shows the reticle.
-  /// The rest of the reticle mesh is transparent.
+/// Процент сетки сетки, которая показывает сетку.
+   /// Остальная сетка сетки прозрачна.
   private const float RETICLE_VISUAL_RATIO = 0.1f;
 
   public GvrLaserVisual LaserVisual { get; private set; }
@@ -87,14 +87,14 @@ public class GvrLaserPointer : GvrBasePointer {
     if (LaserVisual.reticle != null) {
       float reticleScale = LaserVisual.reticle.transform.localScale.x;
 
-      // Fixed size for enter radius to avoid flickering.
-      // This will cause some slight variability based on the distance of the object
-      // from the camera, and is optimized for the average case.
+      // Фиксированный размер для ввода радиуса во избежание мерцания.
+       // Это приведет к некоторой незначительной изменчивости, основанной на расстоянии объекта
+       // из камеры и оптимизирован для среднего случая.
       enterRadius = LaserVisual.reticle.sizeMeters * 0.5f * RETICLE_VISUAL_RATIO;
 
-      // Dynamic size for exit radius.
-      // Always correct because we know the intersection point of the object and can
-      // therefore use the correct radius based on the object's distance from the camera.
+      // Динамический размер для радиуса выхода.
+       // Всегда правильно, потому что мы знаем точку пересечения объекта и можем
+       // поэтому используйте правильный радиус, основанный на расстоянии объекта от камеры.
       exitRadius = reticleScale * LaserVisual.reticle.ReticleMeshSizeMeters * RETICLE_VISUAL_RATIO;
     } else {
       enterRadius = 0.0f;

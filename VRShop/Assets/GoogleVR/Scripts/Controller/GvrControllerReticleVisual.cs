@@ -1,24 +1,24 @@
-﻿// Copyright 2017 Google Inc. All rights reserved.
+// Copyright 2017 Google Inc. Все права защищены.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
+// Лицензируется по лицензии Apache, версия 2.0 («Лицензия»);
+// вы не можете использовать этот файл, кроме как в соответствии с Лицензией.
+// Вы можете получить копию Лицензии на
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Если это не предусмотрено действующим законодательством или не согласовано в письменной форме, программное обеспечение
+// распространяется по лицензии, распространяется на основе «AS IS»,
+// БЕЗ ГАРАНТИЙ ИЛИ УСЛОВИЙ ЛЮБОГО ВИДА, явных или подразумеваемых.
+// См. Лицензию на конкретном языке, определяющем разрешения и
+// ограничения по лицензии.
 
 using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-/// Visualizes a reticle using a Quad.
-/// Provides tuning options to control how the reticle scales and rotates based
-/// on distance from the camera.
+/// Визуализирует сетку с помощью Quad.
+/// Предоставляет параметры настройки для управления тем, как сетка масштабируется и вращается на основе
+/// расстояния от камеры.
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshFilter))]
 public class GvrControllerReticleVisual : MonoBehaviour {
@@ -41,27 +41,27 @@ public class GvrControllerReticleVisual : MonoBehaviour {
     }
   }
 
-  /// If set to false, the scale is simply set to the sizeMeters value.
+   /// Если установлено значение false, масштаб просто устанавливается на значение sizeMeters.
   [Tooltip("Determines if the size of the reticle is based on the distance from the camera.")]
   public bool isSizeBasedOnCameraDistance = true;
 
-  /// The reticle will be scaled based on the size of the mesh so that it's size matches this size.
+  /// Сетка будет масштабироваться в зависимости от размера сетки, чтобы ее размер соответствовал этому размеру.
   [Tooltip("Final size of the reticle in meters when it is 1 meter from the camera.")]
   public float sizeMeters = 0.1f;
 
   [Tooltip("Determines if the reticle will always face the camera and along what axes.")]
   public FaceCameraData doesReticleFaceCamera = new FaceCameraData(true);
 
-  /// Sorting order to use for the reticle's renderer.
-  /// Range values come from https://docs.unity3d.com/ScriptReference/Renderer-sortingOrder.html.
+  /// Порядок сортировки для рендеринга сетки.
+   /// Значения диапазона относятся к https://docs.unity3d.com/ScriptReference/Renderer-sortingOrder.html.
   [Range(-32767, 32767)]
   public int sortingOrder = 0;
 
-  /// The size of the reticle's mesh in meters.
+  /// Размер сетки сетки в метрах.
   public float ReticleMeshSizeMeters { get; private set; }
 
-  /// The ratio of the reticleMeshSizeMeters to 1 meter.
-  /// If reticleMeshSizeMeters is 10, then reticleMeshSizeRatio is 0.1.
+  /// Соотношение параметров сетки сетки: 1 метр.
+   /// Если значение параметра сетки сетки равняется 10, то значение сетки сетки равно 0.1.
   public float ReticleMeshSizeRatio { get; private set; }
 
   protected MeshRenderer meshRenderer;
@@ -106,10 +106,10 @@ public class GvrControllerReticleVisual : MonoBehaviour {
   }
 
   protected virtual void OnRenderObject() {
-    // It is possible for paired calls to OnWillRenderObject/OnRenderObject to be nested if
-    // Camera.Render is explicitly called for any special effects. To avoid the reticle being
-    // rotated/scaled incorrectly in that case, the reticle is reset to it's pre-OnWillRenderObject
-    // after a render has finished.
+    // Возможно, что парные вызовы OnWillRenderObject / OnRenderObject являются вложенными, если
+     // Camera.Render явно вызван для любых специальных эффектов. Чтобы избежать появления сетки
+     // Поворот / масштабирование неправильно в этом случае, сетка сбрасывается до пред-OnWillRenderObject
+     // после завершения рендеринга.
     transform.localScale = preRenderLocalScale;
     transform.localRotation = preRenderLocalRotation;
   }

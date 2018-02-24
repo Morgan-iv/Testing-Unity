@@ -1,24 +1,24 @@
-// Copyright 2016 Google Inc. All rights reserved.
+// Copyright 2016 Google Inc. Все права защищены.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
+// Лицензируется по лицензии Apache, версия 2.0 («Лицензия»);
+// вы не можете использовать этот файл, кроме как в соответствии с Лицензией.
+// Вы можете получить копию Лицензии на
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Если это не предусмотрено действующим законодательством или не согласовано в письменной форме, программное обеспечение
+// распространяется по лицензии, распространяется на основе «AS IS»,
+// БЕЗ ГАРАНТИЙ ИЛИ УСЛОВИЙ ЛЮБОГО ВИДА, явных или подразумеваемых.
+// См. Лицензию на конкретном языке, определяющем разрешения и
+// ограничения по лицензии.
 
-// The controller is not available for versions of Unity without the
-// GVR native integration.
+// Контроллер недоступен для версий Unity без
+// Собственная интеграция с GVR.
 
 using UnityEngine;
 using System.Collections;
 
-/// Provides visual feedback for the daydream controller.
+/// Обеспечивает визуальную обратную связь для контроллера дневного света.
 [RequireComponent(typeof(Renderer))]
 public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
 
@@ -35,9 +35,9 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
     public Vector2 touchPos;
   }
 
-  /// An array of prefabs that will be instantiated and added as children
-  /// of the controller visual when the controller is created. Used to
-  /// attach tooltips or other additional visual elements to the control dynamically.
+   /// Массив сборных файлов, которые будут созданы и добавлены как дети
+   /// контроллера визуально, когда контроллер создан. Использовал к
+   /// динамически добавляет всплывающие подсказки или другие дополнительные визуальные элементы.
   [SerializeField]
   private GameObject[] attachmentPrefabs;
   [SerializeField] private Color touchPadColor =
@@ -47,19 +47,19 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
   [SerializeField] private Color systemButtonColor =
       new Color(20f / 255f, 20f / 255f, 20f / 255f, 1);
 
-  /// Determines if the displayState is set from GvrControllerInput.
+  /// Определяет, установлено ли displayState из GvrControllerInput.
   [Tooltip("Determines if the displayState is set from GvrControllerInput.")]
   public bool readControllerState = true;
 
-  /// Used to set the display state of the controller visual.
-  /// This can be used for tutorials that visualize the controller or other use-cases that require
-  /// displaying the controller visual without the state being determined by controller input.
-  /// Additionally, it can be used to preview the controller visual in the editor.
-  /// NOTE: readControllerState must be disabled to set the display state.
+  /// Используется для установки состояния дисплея контроллера.
+   /// Это можно использовать для учебных пособий, которые визуализируют контроллер или другие варианты использования, которые требуют
+   /// отображение визуализации контроллера без состояния, определяемого входом контроллера.
+   /// Кроме того, его можно использовать для предварительного просмотра визуализации контроллера в редакторе.
+   /// ПРИМЕЧАНИЕ: readControllerState необходимо отключить, чтобы установить состояние отображения.
   public ControllerDisplayState displayState;
 
-  /// This is the preferred, maximum alpha value the object should have
-  /// when it is a comfortable distance from the head.
+  /// Это предпочтительное максимальное значение альфа, которое должен иметь объект
+   ///, когда это удобное расстояние от головы.
   [Range(0.0f, 1.0f)]
   public float maximumAlpha = 1.0f;
 
@@ -120,14 +120,14 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
   private bool wasTouching;
   private float touchTime;
 
-  // Data passed to shader, (xy) touch position, (z) touch duration, (w) battery state.
+ // Данные передаются в шейдер, (xy) положение касания, (z) длительность касания, (w) состояние батареи.
   private Vector4 controllerShaderData;
-  // Data passed to shader, (x) overall alpha, (y) touchpad click duration,
-  //  (z) app button click duration, (w) system button click duration.
+  // Данные передаются в шейдер, (x) общую альфа, (y) продолжительность нажатия сенсорной панели,
+   // (z) продолжительность нажатия кнопки приложения, (w) длительность нажатия кнопки системы.
   private Vector4 controllerShaderData2;
   private Color currentBatteryColor;
 
-  // These values control animation times for the controller buttons
+  // Эти значения управляют временем анимации для кнопок контроллера
   public const float APP_BUTTON_ACTIVE_DURATION_SECONDS = 0.111f;
   public const float APP_BUTTON_RELEASE_DURATION_SECONDS = 0.0909f;
 
@@ -140,8 +140,8 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
   public const float TOUCHPAD_CLICK_SCALE_DURATION_SECONDS = 0.075f;
   public const float TOUCHPAD_POINT_SCALE_DURATION_SECONDS = 0.15f;
 
-  // These values are used by the shader to control battery display
-  // Only modify these values if you are also modifying the shader.
+  // Эти значения используются шейдером для управления дисплеем батареи
+   // Изменяйте эти значения только в том случае, если вы также модифицируете шейдер.
   private const float BATTERY_FULL = 0;
   private const float BATTERY_ALMOST_FULL = .125f;
   private const float BATTERY_MEDIUM = .225f;
@@ -154,8 +154,8 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
   private readonly Color GVR_BATTERY_MED_COLOR = new Color(0,1,0.588f,1);
   private readonly Color GVR_BATTERY_FULL_COLOR = new Color(0,1,0.588f,1);
 
-  // How much time to use as an 'immediate update'.
-  // Any value large enough to instantly update all visual animations.
+  // Сколько времени нужно использовать в качестве «немедленного обновления».
+   // Любое значение, достаточно большое для мгновенного обновления всех визуальных анимаций.
   private const float IMMEDIATE_UPDATE_TIME = 10f;
 
   void Awake() {
@@ -216,8 +216,8 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
   }
 
   private void UpdateControllerState() {
-    // Return early when the application isn't playing to ensure that the serialized displayState
-    // is used to preview the controller visual instead of the default GvrControllerInput values.
+    // Вернемся раньше, когда приложение не воспроизводится, чтобы гарантировать, что сериализованный displayState
+     // используется для предварительного просмотра визуализации контроллера вместо значений по умолчанию GvrControllerInput.
 #if UNITY_EDITOR
     if (!Application.isPlaying) {
       return;
@@ -236,15 +236,15 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
 
   private void OnVisualUpdate(bool updateImmediately = false) {
 
-    // Update the visual display based on the controller state
+    // Обновление визуального отображения на основе состояния контроллера
     if(readControllerState) {
       UpdateControllerState();
     }
 
     float deltaTime = Time.deltaTime;
 
-    // If flagged to update immediately, set deltaTime to an arbitrarily large value
-    // This is particularly useful in editor, but also for resetting state quickly
+    // Если флажок для немедленного обновления, установите deltaTime на произвольно большое значение
+     // Это особенно полезно в редакторе, но также для быстрого сброса состояния
     if(updateImmediately) {
       deltaTime = IMMEDIATE_UPDATE_TIME;
     }
@@ -267,7 +267,7 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
       controllerShaderData2.w = Mathf.Max(0, controllerShaderData2.w - deltaTime / SYSTEM_BUTTON_RELEASE_DURATION_SECONDS);
     }
 
-    // Set the material's alpha to the multiplied preferred alpha.
+   // Устанавливаем альфа альфа для умноженной предпочтительной альфы.
     controllerShaderData2.x = PreferredAlpha;
     materialPropertyBlock.SetVector(alphaId, controllerShaderData2);
 
@@ -294,7 +294,7 @@ public class GvrControllerVisual : MonoBehaviour, IGvrArmModelReceiver {
 
     materialPropertyBlock.SetVector(touchId, controllerShaderData);
     materialPropertyBlock.SetColor(batteryColorId, currentBatteryColor);
-    // Update the renderer
+    // Обновление рендеринга
     controllerRenderer.SetPropertyBlock(materialPropertyBlock);
   }
 

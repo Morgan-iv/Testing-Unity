@@ -1,27 +1,27 @@
-// Copyright 2017 Google Inc. All rights reserved.
+// Copyright 2017 Google Inc. Все права защищены.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
+// Лицензируется по лицензии Apache, версия 2.0 («Лицензия»);
+// вы не можете использовать этот файл, кроме как в соответствии с Лицензией.
+// Вы можете получить копию Лицензии на
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Если это не предусмотрено действующим законодательством или не согласовано в письменной форме, программное обеспечение
+// распространяется по лицензии, распространяется на основе «AS IS»,
+// БЕЗ ГАРАНТИЙ ИЛИ УСЛОВИЙ ЛЮБОГО ВИДА, явных или подразумеваемых.
+// См. Лицензию на конкретном языке, определяющем разрешения и
+// ограничения по лицензии.
 
 using UnityEngine;
 using System.Collections;
 
-/// Represents an object tracked by controller input.
+/// Представляет объект, отслеживаемый вводом контроллера.
 ///
-/// Updates the position and rotation of an object to approximate the controller by using
-/// a _GvrBaseArmModel_ and propagates the _GvrBaseArmModel_ to all _IGvrArmModelReceivers_
-/// underneath this object.
+/// Обновляет положение и вращение объекта, чтобы аппроксимировать контроллер, используя
+/// a_GvrBaseArmModel_ и передает _GvrBaseArmModel_ всем _IGvrArmModelReceivers_
+/// под этим объектом.
 ///
-/// Manages the active status of the tracked controller based on controller connection status.
+/// Управляет активным состоянием отслеживаемого контроллера на основе состояния подключения контроллера.
 public class GvrTrackedController : MonoBehaviour {
   [SerializeField]
   [Tooltip("Arm model used to control the pose (position and rotation) of the object, " +
@@ -32,8 +32,8 @@ public class GvrTrackedController : MonoBehaviour {
   [Tooltip("Is the object's active status determined by the controller connection status.")]
   private bool isDeactivatedWhenDisconnected = true;
 
-  /// Arm model used to control the pose (position and rotation) of the object, and to propagate to
-  /// children that implement IGvrArmModelReceiver.
+  /// Ручная модель, используемая для управления позой (положением и вращением) объекта и для распространения на
+   /// дети, которые реализуют IGvrArmModelReceiver.
   public GvrBaseArmModel ArmModel {
     get {
       return armModel;
@@ -48,7 +48,7 @@ public class GvrTrackedController : MonoBehaviour {
     }
   }
 
-  /// Is the object's active status determined by the controller connection status.
+ /// Статус активного объекта определяется состоянием соединения с контроллером.
   public bool IsDeactivatedWhenDisconnected {
     get {
       return isDeactivatedWhenDisconnected;
@@ -81,16 +81,16 @@ public class GvrTrackedController : MonoBehaviour {
   }
 
   void OnEnable() {
-    // Update the position using OnPostControllerInputUpdated.
-    // This way, the position and rotation will be correct for the entire frame
-    // so that it doesn't matter what order Updates get called in.
+    // Обновление позиции с помощью OnPostControllerInputUpdated.
+     // Таким образом, положение и вращение будут корректными для всего кадра
+     // так что неважно, в какой порядок вызывается запрос.
     GvrControllerInput.OnPostControllerInputUpdated += OnPostControllerInputUpdated;
 
-    /// Force the pose to update immediately in case the controller isn't updated before the next
-    /// time a frame is rendered.
+    /// Заставить позу немедленно обновляться, если контроллер не обновляется до следующего
+     /// время рендеринга фрейма.
     UpdatePose();
 
-    /// Check the controller state immediately whenever this script is enabled.
+    /// Проверить состояние контроллера сразу, когда этот скрипт включен.
     OnControllerStateChanged(GvrControllerInput.State, GvrControllerInput.State);
   }
 
@@ -127,11 +127,11 @@ public class GvrTrackedController : MonoBehaviour {
   }
 
 #if UNITY_EDITOR
-  /// If the "armModel" serialized field is changed while the application is playing
-  /// by using the inspector in the editor, then we need to call the PropagateArmModel
-  /// to ensure all children IGvrArmModelReceiver are updated.
-  /// Outside of the editor, this can't happen because the arm model can only change when
-  /// a Setter is called that automatically calls PropagateArmModel.
+  /// Если поле сериализации «armModel» изменяется во время воспроизведения приложения
+   ///, используя инспектор в редакторе, тогда нам нужно вызвать PropagateArmModel
+   /// для обеспечения обновления всех дочерних элементов IGvrArmModelReceiver.
+   /// Вне редактора это невозможно, потому что модель руки может измениться только тогда, когда
+   /// вызывается Setter, который автоматически вызывает PropagateArmModel.
   void OnValidate() {
     if (Application.isPlaying && isActiveAndEnabled) {
       PropagateArmModel();

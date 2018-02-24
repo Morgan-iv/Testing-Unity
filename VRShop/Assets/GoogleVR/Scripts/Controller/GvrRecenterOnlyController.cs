@@ -1,16 +1,16 @@
-// Copyright 2017 Google Inc. All rights reserved.
+// Copyright 2017 Google Inc. Все права защищены.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
+// Лицензируется по лицензии Apache, версия 2.0 («Лицензия»);
+// вы не можете использовать этот файл, кроме как в соответствии с Лицензией.
+// Вы можете получить копию Лицензии на
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Если это не предусмотрено действующим законодательством или не согласовано в письменной форме, программное обеспечение
+// распространяется по лицензии, распространяется на основе «AS IS»,
+// БЕЗ ГАРАНТИЙ ИЛИ УСЛОВИЙ ЛЮБОГО ВИДА, явных или подразумеваемых.
+// См. Лицензию на конкретном языке, определяющем разрешения и
+// ограничения по лицензии.
 
 using UnityEngine;
 
@@ -20,13 +20,13 @@ using UnityEngine.XR;
 using XRSettings = UnityEngine.VR.VRSettings;
 #endif  // UNITY_2017_2_OR_NEWER
 
-/// Used to recenter only the controller, required for scenes that have no clear forward direction.
-/// Details: https://developers.google.com/vr/distribute/daydream/design-requirements#UX-D6
+/// Используется для повторного включения только контроллера, необходимого для сцен, у которых нет четкого направления вперед.
+/// Детали: https://developers.google.com/vr/distribute/daydream/design-requirements#UX-D6
 ///
-/// Works by offsetting the orientation of the transform when a recenter occurs to correct for the
-/// orientation change caused by the recenter event.
+/// Работает путем смещения ориентации преобразования, когда происходит повторный приемник для коррекции
+/// изменение ориентации, вызванное событием recenter.
 ///
-/// Usage: Place on the parent of the camera that should have it's orientation corrected.
+/// Использование: Поместите на родителя камеры, у которой должна быть исправлена ориентация.
 public class GvrRecenterOnlyController : MonoBehaviour {
   private Quaternion lastAppliedYawCorrection = Quaternion.identity;
   private Quaternion yawCorrection = Quaternion.identity;
@@ -36,7 +36,7 @@ public class GvrRecenterOnlyController : MonoBehaviour {
       return;
     }
 
-    // Daydream is loaded only on deivce, not in editor.
+    // Daydream загружается только на устройстве, а не в редакторе.
 #if UNITY_ANDROID && !UNITY_EDITOR
     if (XRSettings.loadedDeviceName != GvrSettings.VR_SDK_DAYDREAM) {
       return;
@@ -49,7 +49,7 @@ public class GvrRecenterOnlyController : MonoBehaviour {
     }
 
 #if UNITY_EDITOR
-    // Compatibility for Instant Preview.
+    // Совместимость для мгновенного предварительного просмотра.
     if (Gvr.Internal.InstantPreview.Instance != null &&
       Gvr.Internal.InstantPreview.Instance.enabled &&
       (GvrControllerInput.HomeButtonDown || GvrControllerInput.HomeButtonState)) {
