@@ -1,16 +1,16 @@
-// Copyright 2017 Google Inc. All rights reserved.
+// Copyright 2017 Google Inc. Все права защищены.
 //
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
+// Лицензируется по лицензии Apache, версия 2.0 («Лицензия»);
+// вы не можете использовать этот файл, кроме как в соответствии с Лицензией.
+// Вы можете получить копию Лицензии на
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// Если это не предусмотрено действующим законодательством или не согласовано в письменной форме, программное обеспечение
+// распространяется по лицензии, распространяется на основе «AS IS»,
+// БЕЗ ГАРАНТИЙ ИЛИ УСЛОВИЙ ЛЮБОГО ВИДА, явных или подразумеваемых.
+// См. Лицензию на конкретном языке, определяющем разрешения и
+// ограничения по лицензии.
 
 using UnityEngine;
 using System;
@@ -18,90 +18,92 @@ using System.Collections;
 
 using Gvr.Internal;
 
-/// Represents the controller's current connection state.
-/// All values and semantics below (except for Error) are
-/// from gvr_types.h in the GVR C API.
+
+/// Представляет текущее состояние подключения контроллера.
+/// Все значения и семантика ниже (кроме Error) являются
+/// из gvr_types.h в API GVR C.
 public enum GvrConnectionState {
-  /// Indicates that an error has occurred.
+  /// Указывает, что произошла ошибка.
   Error = -1,
 
-  /// Indicates that the controller is disconnected.
+  /// Указывает, что контроллер отключен.
   Disconnected = 0,
-  /// Indicates that the device is scanning for controllers.
+  /// Указывает, что устройство сканирует контроллеры.
   Scanning = 1,
-  /// Indicates that the device is connecting to a controller.
+  /// Указывает, что устройство подключается к контроллеру.
   Connecting = 2,
-  /// Indicates that the device is connected to a controller.
+/// Указывает, что устройство подключено к контроллеру.
   Connected = 3,
 };
 
-/// Represents the API status of the current controller state.
-/// Values and semantics from gvr_types.h in the GVR C API.
+/// Представляет статус API текущего состояния контроллера.
+/// Значения и семантика из gvr_types.h в API GVR C.
 public enum GvrControllerApiStatus {
-  /// A Unity-localized error occurred.
-  /// This is the only value that isn't in gvr_types.h.
+  /// Произошла ошибка, связанная с соединением 
+   /// Это единственное значение, которое не указано в gvr_types.h.
   Error = -1,
 
-  /// API is happy and healthy. This doesn't mean the controller itself
-  /// is connected, it just means that the underlying service is working
-  /// properly.
+   /// API счастлив и здоров. Это не означает, что сам контроллер работает
+   /// Это означает, что основная служба работает
+   /// должным образом.
   Ok = 0,
 
-  /// Any other status represents a permanent failure that requires
-  /// external action to fix:
 
-  /// API failed because this device does not support controllers (API is too
-  /// low, or other required feature not present).
+   /// Любой другой статус представляет собой постоянный сбой, который требует
+   /// внешнее действие для исправления:
+
+   /// API не удалось, потому что это устройство не поддерживает контроллеры (API тоже
+   /// low или другая требуемая функция отсутствует).
   Unsupported = 1,
-  /// This app was not authorized to use the service (e.g., missing permissions,
-  /// the app is blacklisted by the underlying service, etc).
+  /// Этому приложению не было разрешено использовать эту службу (например, отсутствующие разрешения,
+   /// приложение занесено в черный список базовым сервисом и т. д.).
   NotAuthorized = 2,
-  /// The underlying VR service is not present.
+  /// Подходящая служба VR отсутствует.
   Unavailable = 3,
-  /// The underlying VR service is too old, needs upgrade.
+  /// Основная служба VR слишком старая, нуждается в обновлении.
   ApiServiceObsolete = 4,
-  /// The underlying VR service is too new, is incompatible with current client.
+  /// Основная служба VR слишком новая, несовместима с текущим клиентом.
   ApiClientObsolete = 5,
-  /// The underlying VR service is malfunctioning. Try again later.
+  /// Неисправна базовая служба VR. Попробуйте позже.
   ApiMalfunction = 6,
 };
 
-/// Represents the controller's current battery level.
-/// Values and semantics from gvr_types.h in the GVR C API.
+/// Представляет текущий уровень заряда аккумулятора контроллера.
+/// Значения и семантика из gvr_types.h в API GVR C.
 public enum GvrControllerBatteryLevel {
-  /// A Unity-localized error occurred.
-  /// This is the only value that isn't in gvr_types.h.
+ /// Произошла ошибка, связанная с соединением.
+   /// Это единственное значение, которое не указано в gvr_types.h.
   Error = -1,
 
-  /// The battery state is currently unreported
+  /// Состояние батареи в настоящее время не зарегистрировано
   Unknown = 0,
 
-  /// Equivalent to 1 out of 5 bars on the battery indicator
+ /// Эквивалент 1 из 5 баров индикатора батареи
   CriticalLow = 1,
 
-  /// Equivalent to 2 out of 5 bars on the battery indicator
+ /// Эквивалентно 2 из 5 баров индикатора батареи
   Low = 2,
 
-  /// Equivalent to 3 out of 5 bars on the battery indicator
+  /// Эквивалент 3 из 5 баров индикатора батареи
   Medium = 3,
 
-  /// Equivalent to 4 out of 5 bars on the battery indicator
+  /// Эквивалент 4 из 5 баров индикатора батареи
   AlmostFull = 4,
 
-  /// Equivalent to 5 out of 5 bars on the battery indicator
+  /// Эквивалентно 5 из 5 баров индикатора батареи
   Full = 5,
 };
 
 
-/// Main entry point for the Daydream controller API.
+/// Основная точка входа для API контроллера Daydream.
 ///
-/// To use this API, add this behavior to a GameObject in your scene, or use the
-/// GvrControllerMain prefab. There can only be one object with this behavior on your scene.
+/// Чтобы использовать этот API, добавьте это поведение в GameObject в вашей сцене или используйте
+/// GvrControllerMain prefab. На вашем месте может быть только один объект с таким поведением.
 ///
-/// This is a singleton object.
+/// Это одноэлементный объект.
 ///
-/// To access the controller state, simply read the static properties of this class. For example,
-/// to know the controller's current orientation, use GvrControllerInput.Orientation.
+/// Для доступа к состоянию контроллера просто прочитайте статические свойства этого класса. Например,
+///, чтобы узнать текущую ориентацию контроллера, используйте GvrControllerInput.Orientation.
 public class GvrControllerInput : MonoBehaviour {
   private static GvrControllerInput instance;
   private static IControllerProvider controllerProvider;
@@ -111,15 +113,15 @@ public class GvrControllerInput : MonoBehaviour {
 
   private int lastUpdatedFrameCount = -1;
 
-  /// Event handler for receiving button, touchpad, and IMU updates from the controller.
-  /// Use this handler to update app state based on controller input.
+  /// Обработчик событий для приема кнопки, тачпада и обновлений IMU от контроллера.
+   /// Используйте этот обработчик для обновления состояния приложения на основе ввода контроллера.
   public static event Action OnControllerInputUpdated;
 
-  /// Event handler for receiving a second notification callback, after all
-  /// `OnControllerInputUpdated` events have fired.
+  /// Обработчик событий для получения второго обратного вызова уведомления, в конце концов
+   /// События `OnControllerInputUpdated` запускаются.
   public static event Action OnPostControllerInputUpdated;
 
-  /// Event handler for when the connection state of the controller changes.
+ /// Обработчик событий, когда изменяется состояние соединения контроллера.
   public delegate void OnStateChangedEvent(GvrConnectionState state, GvrConnectionState oldState);
   public static event OnStateChangedEvent OnStateChanged;
 
@@ -128,7 +130,7 @@ public class GvrControllerInput : MonoBehaviour {
     USB,
     WIFI,
   }
-  /// Indicates how we connect to the controller emulator.
+  /// Указывает, как мы подключаемся к эмулятору контроллера.
   [GvrInfo("Hold Shift to use the Mouse as the controller.\n\n" +
            "Controls:  Shift +\n" +
            "   • Move Mouse = Change Orientation\n" +
@@ -140,7 +142,7 @@ public class GvrControllerInput : MonoBehaviour {
   [Tooltip("How to connect to the emulator: USB cable (recommended) or WIFI.")]
   public EmulatorConnectionMode emulatorConnectionMode = EmulatorConnectionMode.USB;
 
-  /// Returns the controller's current connection state.
+  /// Возвращает текущее состояние подключения контроллера.
   public static GvrConnectionState State {
     get {
       if (instance == null) {
@@ -151,7 +153,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns the API status of the current controller state.
+ /// Возвращает статус API текущего состояния контроллера.
   public static GvrControllerApiStatus ApiStatus {
     get {
       if (instance == null) {
@@ -162,7 +164,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true if battery status is supported.
+  /// Возвращает true, если поддерживается состояние батареи.
   public static bool SupportsBatteryStatus {
     get {
       if (controllerProvider == null || instance == null) {
@@ -173,11 +175,11 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns the controller's current orientation in space, as a quaternion.
-  /// The rotation is provided in 'orientation space' which means the rotation is given relative
-  /// to the last time the user recentered their controller. To make a game object in your scene
-  /// have the same orientation as the controller, simply assign this quaternion to the object's
-  /// `transform.rotation`. To match the relative rotation, use `transform.localRotation` instead.
+  /// Возвращает текущую ориентацию контроллера в пространстве, как кватернион.
+   /// Вращение обеспечивается в «пространстве ориентации», что означает, что вращение задано относительно того
+   ///,как в последний раз пользователь переместил свой контроллер. Чтобы создать игровой объект в вашей сцене
+   /// имеют ту же ориентацию, что и контроллер, просто назначьте этот кватернион объекту
+   /// `transform.rotation`. Чтобы соответствовать относительному вращению, вместо этого используйте `transform.localRotation`.
   public static Quaternion Orientation {
     get {
       if (instance == null) {
@@ -188,13 +190,13 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns the controller's current angular speed in radians per second, using the right-hand
-  /// rule (positive means a right-hand rotation about the given axis), as measured by the
-  /// controller's gyroscope.
-  /// The controller's axes are:
-  /// - X points to the right,
-  /// - Y points perpendicularly up from the controller's top surface
-  /// - Z lies along the controller's body, pointing towards the front
+  /// Возвращает текущую угловую скорость контроллера в радианах в секунду, используя правое
+   /// правило (положительное означает правое вращение вокруг данной оси), измеряемое
+   /// диспетчерским гироскопом.
+   /// Оси контроллера:
+   /// - X указывает вправо,
+   /// - Y указывает перпендикулярно верхней поверхности контроллера
+   /// - Z лежит вдоль тела регулятора, указывая на фронт
   public static Vector3 Gyro {
     get {
       if (instance == null) {
@@ -205,15 +207,15 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns the controller's current acceleration in meters per second squared.
-  /// The controller's axes are:
-  /// - X points to the right,
-  /// - Y points perpendicularly up from the controller's top surface
-  /// - Z lies along the controller's body, pointing towards the front
-  /// Note that gravity is indistinguishable from acceleration, so when the controller is resting
-  /// on a surface, expect to measure an acceleration of 9.8 m/s^2 on the Y axis. The accelerometer
-  /// reading will be zero on all three axes only if the controller is in free fall, or if the user
-  /// is in a zero gravity environment like a space station.
+  /// Возвращает текущее ускорение контроллера в метрах в секунду.
+   /// Оси контроллера:
+   /// - X указывает вправо,
+   /// - Y указывает перпендикулярно верхней поверхности контроллера
+   /// - Z лежит вдоль тела регулятора, указывая на фронт
+   /// Обратите внимание, что гравитация неотличима от ускорения, поэтому, когда контроллер лежит
+   /// на поверхности, ожидаем ускорение 9,8 м / с ^ 2 по оси Y. Данные акселерометра
+   /// будут равным нулю на всех трех осях, только если контроллер находится в свободном падении или если пользователь
+ /// находится в условиях невесомости, таких как на космической станции.
   public static Vector3 Accel {
     get {
       if (instance == null) {
@@ -224,7 +226,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true while the user is touching the touchpad.
+ /// Возвращает true, когда пользователь касается сенсорной панели.
   public static bool IsTouching {
     get {
       if (instance == null) {
@@ -235,9 +237,9 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true in the frame the user starts touching the touchpad.  Every TouchDown event
-  /// is guaranteed to be followed by exactly one TouchUp event in a later frame.
-  /// Also, TouchDown and TouchUp will never both be true in the same frame.
+  /// Возвращает true в кадре, когда пользователь начинает касаться сенсорной панели. Каждое событие TouchDown
+  /// гарантируется, что за один кадр будет только одно событие TouchUp.
+   /// Также TouchDown и TouchUp никогда не будут одновременно в одном кадре.
   public static bool TouchDown {
     get {
       if (instance == null) {
@@ -248,9 +250,9 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true the frame after the user stops touching the touchpad.  Every TouchUp event
-  /// is guaranteed to be preceded by exactly one TouchDown event in an earlier frame.
-  /// Also, TouchDown and TouchUp will never both be true in the same frame.
+/// Возвращает true кадр после того, как пользователь перестает касаться сенсорной панели. Каждое событие TouchUp
+   /// гарантированно будет предшествовать одно событие TouchDown в более раннем кадре.
+   /// Также TouchDown и TouchUp никогда не будут одновременно в одном кадре.
   public static bool TouchUp {
     get {
       if (instance == null) {
@@ -261,10 +263,10 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Position of the current touch, if touching the touchpad.
-  /// If not touching, this is the position of the last touch (when the finger left the touchpad).
-  /// The X and Y range is from 0 to 1.
-  /// (0, 0) is the top left of the touchpad and (1, 1) is the bottom right of the touchpad.
+  /// Положение текущего касания при касании сенсорной панели.
+   /// Если не касаться, это положение последнего касания (когда палец вышел из сенсорной панели).
+   /// Х и Y диапазон составляет от 0 до 1.
+   /// (0, 0) - верхняя левая часть сенсорной панели, а (1, 1) - нижняя правая часть сенсорной панели.
   public static Vector2 TouchPos {
     get {
       if (instance == null) {
@@ -275,11 +277,11 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Position of the current touch, if touching the touchpad.
-  /// If not touching, this is the position of the last touch (when the finger left the touchpad).
-  /// The X and Y range is from -1 to 1.  (-.707,-.707) is bottom left, (.707,.707) is upper right.
-  /// (0, 0) is the center of the touchpad.
-  /// The magnitude of the touch vector is guaranteed to be <= 1.
+  /// Положение текущего касания при касании сенсорной панели.
+   /// Если не касаться, это положение последнего касания (когда палец вышел из сенсорной панели).
+   /// Диапазон X и Y от -1 до 1. (-.707, -. 707) внизу слева (.707, .707) - верхний правый.
+   /// (0, 0) - это центр тачпада.
+   /// Величина касательного вектора гарантируется <= 1.
   public static Vector2 TouchPosCentered {
     get {
       if (instance == null) {
@@ -289,7 +291,7 @@ public class GvrControllerInput : MonoBehaviour {
       return instance.touchPosCentered;
     }
   }
-
+                     // Используйте Recentered, чтобы определить, когда пользователь выполнил жест рецензента.
   [System.Obsolete("Use Recentered to detect when user has completed the recenter gesture.")]
   public static bool Recentering {
     get {
@@ -297,10 +299,10 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true if the user just completed the recenter gesture. The headset and
-  /// the controller's orientation are now being reported in the new recentered
-  /// coordinate system. This is an event flag (it is true for only one frame
-  /// after the event happens, then reverts to false).
+  /// Возвращает true, если пользователь только что завершил жест повторного вызова. Гарнитура и
+   /// ориентация контроллера теперь сообщается в новом повторной
+   /// системе координат. Это флаг события (это верно только для одного кадра
+   /// после события, а затем возвращается к false).
   public static bool Recentered {
     get {
       if (instance == null) {
@@ -311,7 +313,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true while the user holds down the click button (touchpad button).
+/// Возвращает true, когда пользователь удерживает нажатие кнопки (кнопка тачпада).
   public static bool ClickButton {
     get {
       if (instance == null) {
@@ -322,10 +324,10 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true in the frame the user starts pressing down the click button.
-  /// (touchpad button).  Every ClickButtonDown event is
-  /// guaranteed to be followed by exactly one ClickButtonUp event in a later frame.
-  /// Also, ClickButtonDown and ClickButtonUp will never both be true in the same frame.
+  /// Возвращает true в кадре, когда пользователь начинает нажимать кнопку клика.
+   /// (сенсорная панель). После каждого события ClickButtonDown
+   ///   следует только одно событие ClickButtonUp в более позднем кадре.
+   /// Также ClickButtonDown и ClickButtonUp никогда не будут одновременно в одном кадре.
   public static bool ClickButtonDown {
     get {
       if (instance == null) {
@@ -336,10 +338,10 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true the frame after the user stops pressing down the click button.
-  /// (touchpad button).  Every ClickButtonUp event
-  /// is guaranteed to be preceded by exactly one ClickButtonDown event in an earlier frame.
-  /// Also, ClickButtonDown and ClickButtonUp will never both be true in the same frame.
+ /// Возвращает true после того, как пользователь перестанет нажимать кнопку клика.
+   /// (сенсорная панель). Каждое событие ClickButtonUp
+   /// гарантированно будет предшествовать только одному событию ClickButtonDown в более раннем кадре.
+   /// Также ClickButtonDown и ClickButtonUp никогда не будут одновременно в одном кадре.
   public static bool ClickButtonUp {
     get {
       if (instance == null) {
@@ -350,7 +352,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true while the user holds down the app button.
+ /// Возвращает true, когда пользователь удерживает кнопку приложения.
   public static bool AppButton {
     get {
       if (instance == null) {
@@ -361,10 +363,10 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true in the frame the user starts pressing down the app button.
-  /// Every AppButtonDown event is guaranteed
-  /// to be followed by exactly one AppButtonUp event in a later frame.
-  /// Also, AppButtonDown and AppButtonUp will never both be true in the same frame.
+  /// Возвращает true в кадре, когда пользователь начинает нажимать кнопку приложения.
+   /// После каждого события AppButtonDown гарантировано
+   ///  следует только одно событие AppButtonUp в более позднем кадре.
+   /// Также AppButtonDown и AppButtonUp никогда не будут одновременно в одном кадре.
   public static bool AppButtonDown {
     get {
       if (instance == null) {
@@ -375,10 +377,10 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true the frame after the user stops pressing down the app button.
-  /// Every AppButtonUp event
-  /// is guaranteed to be preceded by exactly one AppButtonDown event in an earlier frame.
-  /// Also, AppButtonDown and AppButtonUp will never both be true in the same frame.
+  /// Возвращает true после того, как пользователь перестанет нажимать кнопку приложения.
+   /// Каждое событие AppButtonUp
+   /// гарантированно будет предшествовать точно одному событию AppButtonDown в более раннем кадре.
+   /// Также AppButtonDown и AppButtonUp никогда не будут одновременно в одном кадре.
   public static bool AppButtonUp {
     get {
       if (instance == null) {
@@ -389,7 +391,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true in the frame the user starts pressing down the home button.
+  /// Возвращает true в кадре, когда пользователь начинает нажимать кнопку «домой».
   public static bool HomeButtonDown {
     get {
       if (instance == null) {
@@ -400,7 +402,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true while the user holds down the home button.
+  /// Возвращает true, когда пользователь удерживает кнопку «Домой».
   public static bool HomeButtonState {
     get {
       if (instance == null) {
@@ -411,21 +413,22 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// If State == GvrConnectionState.Error, this contains details about the error.
+  /// Если State == GvrConnectionState.Error, это содержит сведения об ошибке.
   public static string ErrorDetails {
     get {
       if (instance != null) {
         instance.Update();
         return instance.controllerState.connectionState == GvrConnectionState.Error ?
           instance.controllerState.errorDetails : "";
-      } else {
+      } else {  //«Экземпляр GvrController не найден в сцене. Возможно, он отсутствует, или он может"
+                 // + "еще не инициализирован."
         return "GvrController instance not found in scene. It may be missing, or it might "
           + "not have initialized yet.";
       }
     }
   }
 
-  // Returns the GVR C library controller state pointer (gvr_controller_state*).
+  // Возвращает указатель состояния контроллера библиотеки GVR C (gvr_controller_state *).
   public static IntPtr StatePtr {
     get {
       if (instance == null) {
@@ -436,7 +439,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns true if the controller is currently being charged.
+  /// Возвращает true, если контроллер в настоящее время заряжается.
   public static bool IsCharging {
     get {
       if (instance == null) {
@@ -447,7 +450,7 @@ public class GvrControllerInput : MonoBehaviour {
     }
   }
 
-  /// Returns the controller's current battery charge level.
+  /// Возвращает текущий уровень заряда аккумулятора контроллера.
   public static GvrControllerBatteryLevel BatteryLevel {
     get {
       if (instance == null) {
@@ -460,6 +463,8 @@ public class GvrControllerInput : MonoBehaviour {
 
   void Awake() {
     if (instance != null) {
+		// «В вашей сцене было найдено более одного экземпляра GvrController».
+        // + «Убедитесь, что есть только один GvrControllerInput».
       Debug.LogError("More than one GvrController instance was found in your scene. "
         + "Ensure that there is only one GvrControllerInput.");
       this.enabled = false;
@@ -470,15 +475,15 @@ public class GvrControllerInput : MonoBehaviour {
       controllerProvider = ControllerProviderFactory.CreateControllerProvider(this);
     }
 
-    // Keep screen on here, since GvrController must be in any GVR scene in order to enable
-    // controller capabilities.
+   // Храните экран здесь, так как GvrController должен находиться в любой сцене GVR, чтобы включить
+     // возможности контроллера.
     Screen.sleepTimeout = SleepTimeout.NeverSleep;
   }
 
   void Update() {
     if(lastUpdatedFrameCount != Time.frameCount){
-      // The controller state must be updated prior to any function using the
-      // controller API to ensure the state is consistent throughout a frame.
+      // Состояние контроллера должно быть обновлено до любой функции, используя
+       // API-интерфейс контроллера для обеспечения согласованности состояния во всем фрейме.
       lastUpdatedFrameCount = Time.frameCount;
 
       GvrConnectionState oldState = State;
@@ -487,7 +492,7 @@ public class GvrControllerInput : MonoBehaviour {
       UpdateTouchPosCentered();
 
 #if UNITY_EDITOR
-      // Make sure the EditorEmulator is updated immediately.
+      // Удостоверьтесь, что EditorEmulator немедленно обновлен.
       if (GvrEditorEmulator.Instance != null) {
         GvrEditorEmulator.Instance.UpdateEditorEmulation();
       }
